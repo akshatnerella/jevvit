@@ -22,11 +22,21 @@
 
   // ---------- painting ----------
 
+  // Reddit's own ad posts are certain, so they're blurred whatever their category says
+  // (unless the user hides that category outright).
+  function modeFor(cat, sponsored) {
+    if (!settings.enabled) return "off";
+    if (sponsored && settings.blurSponsored && cat.mode !== "hide") return "blur";
+    return cat.mode;
+  }
+
   function paint(el, r) {
     const cat = Jev.lookup(settings, r.category);
     el.dataset.jvState = "done";
     el.dataset.jvCat = r.category;
-    el.dataset.jvMode = settings.enabled ? cat.mode : "off";
+    const sponsored = el.dataset.jvPromoted === "1";
+    el.dataset.jvMode = modeFor(cat, sponsored);
+    el.dataset.jvCover = sponsored ? "Ad · click to show" : `${cat.label} · click to show`;
     el.dataset.jvLow = r.confidence < settings.lowConfidence ? "1" : "0";
     el.style.setProperty("--jv-color", cat.color);
     const pct = settings.showConfidence ? ` ${Math.round(r.confidence * 100)}%` : "";
@@ -47,7 +57,8 @@
   }
 
   function clearEl(el) {
-    for (const k of ["jvState", "jvCat", "jvMode", "jvLow", "jvLabel", "jvTip", "jvId"]) delete el.dataset[k];
+    for (const k of ["jvState", "jvCat", "jvMode", "jvLow", "jvLabel", "jvTip", "jvId", "jvCover", "jvRevealed", "jvPromoted"])
+      delete el.dataset[k];
     el.style.removeProperty("--jv-color");
   }
 
@@ -78,6 +89,7 @@
 
       clearEl(el);
       el.dataset.jvId = post.id;
+      if (post.promoted) el.dataset.jvPromoted = "1";
       const known = results.get(post.id);
       if (known) paint(el, known);
       else {
@@ -184,6 +196,15 @@
   });
 
   Jev.onChange((s) => alive() && applySettings(s));
+
+  // A click on a blurred post reveals it instead of opening it.
+  addEventListener("click", (e) => {
+    const el = e.target.closest?.('[data-jv-mode="blur"]:not([data-jv-revealed])');
+    if (!el) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    el.dataset.jvRevealed = "1";
+  }, true);
 
   chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
     if (msg.type === "pageStats") {

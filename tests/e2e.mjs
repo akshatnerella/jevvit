@@ -60,6 +60,38 @@ try {
   check(painted, "posts get a colored outline and a label");
   await page.screenshot({ path: "feed.png" });
 
+  // --- Blur: Reddit's own ad posts are certain, so they're blurred until clicked ---
+  const adState = () => page.evaluate(() => {
+    const el = document.querySelector("[data-jv-id='t3_1fx0a05']");
+    return { mode: el.dataset.jvMode, revealed: !!el.dataset.jvRevealed, cover: getComputedStyle(el, "::before").content,
+      blur: getComputedStyle(el, "::before").backdropFilter, url: location.href };
+  });
+  let ad = await adState();
+  check(ad.mode === "blur" && ad.cover.includes("Ad · click to show") && ad.blur.includes("blur"), `Reddit ad is blurred behind a cover (${ad.mode}, ${ad.cover})`);
+  const box = await page.evaluate(() => {
+    const el = document.querySelector("[data-jv-id='t3_1fx0a05']");
+    el.scrollIntoView({ block: "center" });
+    const r = el.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  });
+  const urlBefore = ad.url;
+  await page.mouse.click(box.x, box.y);
+  await sleep(300);
+  ad = await adState();
+  check(ad.revealed && ad.cover === "none" && ad.url === urlBefore, "one click reveals the ad and doesn't navigate away");
+  await sw.evaluate(async () => {
+    const settings = await Jev.load();
+    settings.categories.find((c) => c.id === "self_promo").mode = "box";
+    await Jev.save(settings);
+  });
+  await sleep(500);
+  const reblurred = await page.evaluate(() => {
+    const el = document.querySelector("[data-jv-id='t3_1fx0a05']");
+    delete el.dataset.jvRevealed;
+    return el.dataset.jvMode;
+  });
+  check(reblurred === "blur", "Reddit ads stay blurred even when their category is set to Box");
+
   // ---------- search fixture ----------
   const search = await fixturePage(browser);
   await search.goto("https://www.reddit.com/search/?q=mechanical+keyboard", { waitUntil: "domcontentloaded" });
@@ -73,6 +105,8 @@ try {
   await opts.goto(`chrome-extension://${extId}/options.html`);
   await opts.waitForSelector(".cat");
   check((await opts.$$(".cat")).length === 9, "9 default categories on the settings page");
+  check((await opts.$$eval(".cat .modes", (m) => m[0].textContent)) === "BoxDimBlurHideOff", "settings offer a Blur mode");
+  check(await opts.$eval("#blurSponsored", (e) => e.checked), "'Blur Reddit ads' is on by default");
   await opts.evaluate(() => {
     const li = [...document.querySelectorAll(".cat")].find((x) => x.querySelector(".name").value === "Ragebait");
     [...li.querySelectorAll(".modes button")].find((b) => b.textContent === "Hide").click();

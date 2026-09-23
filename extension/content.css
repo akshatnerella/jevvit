@@ -4,7 +4,8 @@
 
 /* box */
 [data-jv-state="done"][data-jv-mode="box"],
-[data-jv-state="done"][data-jv-mode="dim"] {
+[data-jv-state="done"][data-jv-mode="dim"],
+[data-jv-state="done"][data-jv-mode="blur"] {
   outline: 3px solid var(--jv-color) !important;
   outline-offset: 2px;
   border-radius: 12px;
@@ -19,7 +20,7 @@
 }
 
 /* label */
-[data-jv-state="done"]:is([data-jv-mode="box"], [data-jv-mode="dim"])::after {
+[data-jv-state="done"]:is([data-jv-mode="box"], [data-jv-mode="dim"], [data-jv-mode="blur"])::after {
   content: attr(data-jv-label);
   position: absolute;
   /* Straddles the top edge of the box so it doesn't cover the subreddit and author line. */
@@ -39,7 +40,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-[data-jv-state="done"][data-jv-tip]:is([data-jv-mode="box"], [data-jv-mode="dim"]):hover::after {
+[data-jv-state="done"][data-jv-tip]:is([data-jv-mode="box"], [data-jv-mode="dim"], [data-jv-mode="blur"]):hover::after {
   content: attr(data-jv-tip);
   white-space: normal;
 }
@@ -54,4 +55,26 @@
 }
 [data-jv-state="done"][data-jv-mode="hide"] {
   display: none !important;
+}
+
+/* blur: paid placement stays out of the way until the user clicks it. The cover blurs whatever
+   is behind it (backdrop-filter), so it works however the site nests its elements. */
+[data-jv-state="done"][data-jv-mode="blur"]:not([data-jv-revealed])::before {
+  content: attr(data-jv-cover);
+  position: absolute;
+  inset: 0;
+  z-index: 49;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  background: rgba(15, 15, 15, 0.3);
+  backdrop-filter: blur(16px) saturate(0.6);
+  color: #fff;
+  font: 600 13px/1.3 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  cursor: pointer;
 }

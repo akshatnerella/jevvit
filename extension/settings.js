@@ -4,7 +4,7 @@
   const MAX_CATEGORIES = 12; // user categories, not counting the fixed "other"
   const MAX_LABEL = 24;
   const MAX_DESCRIPTION = 240;
-  const MODES = ["box", "dim", "hide", "off"];
+  const MODES = ["box", "dim", "blur", "hide", "off"];
 
   // The description is exactly what Jev reads for that option, so it has to stand on its own.
   const DEFAULT_CATEGORIES = [
@@ -16,7 +16,7 @@
       description: "AI-generated content: AI images or video passed off as real or as the poster's art, generic ChatGPT-written stories and confessions, hollow LLM prose with no specifics." },
     { id: "low_effort", label: "Low effort", color: "#ea580c", mode: "box",
       description: "Memes, shitposts, reaction images and jokes, and one-line questions with no context that a quick search would answer. Little thought went into it." },
-    { id: "self_promo", label: "Self-promo & ads", color: "#0d9488", mode: "box",
+    { id: "self_promo", label: "Self-promo & ads", color: "#0d9488", mode: "blur",
       description: "Advertising: promoted or sponsored posts, and users pushing their own product, app, channel, newsletter, course, store or affiliate link." },
     { id: "news", label: "News", color: "#2563eb", mode: "box",
       description: "Reports of real events: links to news articles, breaking news, official announcements, product launches, court rulings, research results." },
@@ -56,6 +56,8 @@
     enabled: true,
     showConfidence: true,
     showBait: true,
+    // Blur posts Reddit itself marks as ads until the user clicks them, whatever category they land in.
+    blurSponsored: true,
     lowConfidence: 0.55,
     categories: DEFAULT_CATEGORIES,
     otherMode: "off",
@@ -78,6 +80,7 @@
   function normalize(raw) {
     const s = { ...clone(DEFAULT_SETTINGS), ...(raw || {}) };
     if (!MODES.includes(s.otherMode)) s.otherMode = "off";
+    s.blurSponsored = s.blurSponsored !== false;
     s.lowConfidence = Math.min(0.95, Math.max(0, Number(s.lowConfidence) || 0));
     const taken = new Set(["other"]);
     const cats = Array.isArray(s.categories) ? s.categories : clone(DEFAULT_CATEGORIES);

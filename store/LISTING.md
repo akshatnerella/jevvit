@@ -30,8 +30,11 @@ WHAT IT LABELS
 MAKE YOUR OWN CATEGORIES
 Want to spot politics, spoilers or stock-tip hype? Add up to 12 categories of your own, describe them in plain English, and Jevvit sorts your feed by them. Paste any post on the settings page to see how it would be labeled.
 
+LOCK IN
+Reddit ads are blurred behind a "click to show" cover, so they don't pull your attention. One click reveals one.
+
 YOU'RE IN CONTROL
-Set each category to box, dim, hide or off. Hide ragebait entirely, dim low-effort memes, keep the helpful posts front and center. A dashed box means the model is unsure, and hovering any label shows the full breakdown. Works on your home feed, r/popular, subreddits and search results. Toggle Jevvit anywhere with Alt+Shift+R.
+Set each category to box, dim, blur, hide or off. Hide ragebait entirely, dim low-effort memes, keep the helpful posts front and center. A dashed box means the model is unsure, and hovering any label shows the full breakdown. Works on your home feed, r/popular, subreddits and search results. Toggle Jevvit anywhere with Alt+Shift+R.
 
 PRIVATE BY DESIGN
 • No account or sign-in
