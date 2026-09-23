@@ -1,0 +1,192 @@
+<!doctype html>
+<!-- A Reddit feed page (www.reddit.com, logged out) reduced to the structure Jevvit relies on, as
+     observed on the live site in September 2026: posts are <shreddit-post> custom elements (ads are
+     <shreddit-ad-post>) whose attributes carry the post id, title, author, subreddit, score, comment
+     count, post type and domain; flair sits in <shreddit-post-flair> with an aria-label; text posts
+     have a <shreddit-post-text-body> with the body in [property="schema:articleBody"].
+     Subreddits exist, but the users, posts, domains and ads are made up. Refresh this when Reddit's
+     markup changes. -->
+<html><head><meta charset="utf-8"><title>Reddit - The heart of the internet</title>
+<style>
+body{font:14px/1.45 system-ui,sans-serif;background:#fff;color:#1a1a1b;margin:0}
+header{height:56px;border-bottom:1px solid #eee;display:flex;align-items:center;padding:0 20px;font-weight:700}
+main{max-width:640px;margin:16px auto}
+shreddit-post,shreddit-ad-post,shreddit-feed{display:block}
+.block{display:block}.relative{position:relative}.absolute{position:absolute}.inset-0{inset:0}
+.px-md{padding-left:16px;padding-right:16px}.py-2xs{padding-top:4px;padding-bottom:4px}.my-2xs{margin:4px 0}.xs\:rounded-4{border-radius:16px}
+.flex{display:flex;justify-content:space-between;align-items:center}.text-12{font-size:12px;color:#576f76}.font-bold{font-weight:700;color:#1a1a1b;text-decoration:none}
+.text-18{font-size:18px;margin:4px 0 8px;color:#0f1a1c;text-decoration:none}.font-semibold{font-weight:600}
+.flair-content{display:inline-block;background:#eaedef;border-radius:10px;padding:0 6px;font-size:12px}
+.md p{margin:4px 0}.no-underline{color:inherit;text-decoration:none}
+.media .thumb{height:220px;border-radius:16px;background:linear-gradient(135deg,#cbd5e1,#94a3b8);display:grid;place-items:center;color:#fff;font-weight:600}
+.linkcard{display:block;border:1px solid #ddd;border-radius:12px;padding:12px;color:#0f1a1c}
+.actions{display:flex;gap:10px;justify-content:flex-start;margin:8px 0 4px;color:#576f76;font-size:12px}
+.actions span{background:#eaedef;border-radius:999px;padding:4px 10px}
+button{border:0;background:none;cursor:pointer}
+hr{border:0;border-bottom:1px solid #eee;margin:0}
+faceplate-screen-reader-content{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head><body>
+<header>Home</header>
+<main>
+<shreddit-feed>
+  <shreddit-post class="block relative cursor-pointer group bg-neutral-background xs:rounded-4 px-md py-2xs my-2xs" permalink="/r/mildlyinfuriating/comments/1fx0a01/post/" content-href="https://i.redd.it/x" view-context="AggregateFeed" comment-count="3120" view-type="cardView" feedindex="0" created-timestamp="2026-09-22T13:01:55.381000+0000" domain="i.redd.it" id="t3_1fx0a01" post-title="My neighbor parks across my driveway EVERY DAY and today she called the cops on ME. People like this should not be allowed to own cars." post-language="en" post-type="image" score="24100" upvote-ratio="0.97" subreddit-id="t5_fx0" author-id="t2_fx0" author="curbside_karen_hater" subreddit-prefixed-name="r/mildlyinfuriating" subreddit-name="mildlyinfuriating" item-state="UNMODERATED">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/mildlyinfuriating/comments/1fx0a01/post/"><faceplate-screen-reader-content>My neighbor parks across my driveway EVERY DAY and today she called the cops on ME. People like this should not be allowed to own cars.</faceplate-screen-reader-content></a>
+    <span slot="credit-bar" class="flex text-12"><span class="flex gap-2xs items-center">
+      <a href="/r/mildlyinfuriating/" class="font-bold">r/mildlyinfuriating</a> <span aria-hidden="true">•</span>
+      <faceplate-timeago ts="2026-09-22T13:01:55.381000+0000"><time datetime="2026-09-22T13:01:55.381Z">5 hr. ago</time></faceplate-timeago> 
+    </span><span class="flex items-center"><shreddit-post-overflow-menu post-id="t3_1fx0a01"><button aria-label="Open user actions">…</button></shreddit-post-overflow-menu></span></span>
+    <a href="/r/mildlyinfuriating/comments/1fx0a01/post/" id="post-title-t3_1fx0a01" slot="title" class="block font-semibold text-18">
+      My neighbor parks across my driveway EVERY DAY and today she called the cops on ME. People like this should not be allowed to own cars.
+    </a>
+    <div slot="post-media-container" class="media"><div class="thumb">[image]</div></div>
+    <div class="actions"><span>24100 ⇧⇩</span> <span>3120 💬</span> <span>Share</span></div>
+  </shreddit-post>
+  <hr class="border-0 border-b-sm border-solid border-b-neutral-border-weak">
+  <shreddit-post class="block relative cursor-pointer group bg-neutral-background xs:rounded-4 px-md py-2xs my-2xs" permalink="/r/aww/comments/1fx0a02/post/" content-href="https://i.redd.it/x" view-context="AggregateFeed" comment-count="402" view-type="cardView" feedindex="1" created-timestamp="2026-09-22T13:01:55.381000+0000" domain="i.redd.it" id="t3_1fx0a02" post-title="Today is my 16th cake day and nobody remembered. Here is my dog who is always there for me ❤️ upvote so he feels loved" post-language="en" post-type="image" score="51200" upvote-ratio="0.97" subreddit-id="t5_fx1" author-id="t2_fx1" author="biscuit_dad_2009" subreddit-prefixed-name="r/aww" subreddit-name="aww" item-state="UNMODERATED">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/aww/comments/1fx0a02/post/"><faceplate-screen-reader-content>Today is my 16th cake day and nobody remembered. Here is my dog who is always there for me ❤️ upvote so he feels loved</faceplate-screen-reader-content></a>
+    <span slot="credit-bar" class="flex text-12"><span class="flex gap-2xs items-center">
+      <a href="/r/aww/" class="font-bold">r/aww</a> <span aria-hidden="true">•</span>
+      <faceplate-timeago ts="2026-09-22T13:01:55.381000+0000"><time datetime="2026-09-22T13:01:55.381Z">5 hr. ago</time></faceplate-timeago> 
+    </span><span class="flex items-center"><shreddit-post-overflow-menu post-id="t3_1fx0a02"><button aria-label="Open user actions">…</button></shreddit-post-overflow-menu></span></span>
+    <a href="/r/aww/comments/1fx0a02/post/" id="post-title-t3_1fx0a02" slot="title" class="block font-semibold text-18">
+      Today is my 16th cake day and nobody remembered. Here is my dog who is always there for me ❤️ upvote so he feels loved
+    </a>
+    <div slot="post-media-container" class="media"><div class="thumb">[image]</div></div>
+    <div class="actions"><span>51200 ⇧⇩</span> <span>402 💬</span> <span>Share</span></div>
+  </shreddit-post>
+  <hr class="border-0 border-b-sm border-solid border-b-neutral-border-weak">
+  <shreddit-post class="block relative cursor-pointer group bg-neutral-background xs:rounded-4 px-md py-2xs my-2xs" permalink="/r/AmItheAsshole/comments/1fx0a03/post/" content-href="https://self.AmItheAsshole/x" view-context="AggregateFeed" comment-count="2900" view-type="cardView" feedindex="2" created-timestamp="2026-09-22T13:01:55.381000+0000" domain="self.AmItheAsshole" id="t3_1fx0a03" post-title="AITA for refusing to attend my sister&#x27;s wedding after she betrayed me in the most unimaginable way?" post-language="en" post-type="text" score="18400" upvote-ratio="0.97" subreddit-id="t5_fx2" author-id="t2_fx2" author="throwaway_glue_28" subreddit-prefixed-name="r/AmItheAsshole" subreddit-name="AmItheAsshole" item-state="UNMODERATED">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/AmItheAsshole/comments/1fx0a03/post/"><faceplate-screen-reader-content>AITA for refusing to attend my sister&#x27;s wedding after she betrayed me in the most unimaginable way?</faceplate-screen-reader-content></a>
+    <span slot="credit-bar" class="flex text-12"><span class="flex gap-2xs items-center">
+      <a href="/r/AmItheAsshole/" class="font-bold">r/AmItheAsshole</a> <span aria-hidden="true">•</span>
+      <faceplate-timeago ts="2026-09-22T13:01:55.381000+0000"><time datetime="2026-09-22T13:01:55.381Z">5 hr. ago</time></faceplate-timeago> 
+    </span><span class="flex items-center"><shreddit-post-overflow-menu post-id="t3_1fx0a03"><button aria-label="Open user actions">…</button></shreddit-post-overflow-menu></span></span>
+    <a href="/r/AmItheAsshole/comments/1fx0a03/post/" id="post-title-t3_1fx0a03" slot="title" class="block font-semibold text-18">
+      AITA for refusing to attend my sister&#x27;s wedding after she betrayed me in the most unimaginable way?
+    </a>
+    <shreddit-post-flair slot="post-flair" post-id="t3_1fx0a03"><a href="/r/AmItheAsshole/?f=flair_name%3A%22Not the A-hole%22" class="no-decoration"><span class="bg-tone-4 inline-block truncate text-12 px-[6px] rounded-5"><div aria-label="Flair: Not the A-hole" class="flair-content">
+      Not the A-hole
+    </div></span></a></shreddit-post-flair>
+    <shreddit-post-text-body slot="text-body" post-id="t3_1fx0a03" view-context="AggregateFeed" subreddit-prefixed-name="r/AmItheAsshole">
+      <a href="/r/AmItheAsshole/comments/1fx0a03/post/" class="no-underline" slot="text-body"><div class="overflow-hidden" data-post-click-location="text-body">
+        <div id="t3_1fx0a03-post-rtjson-content" class="md feed-card-text-preview line-clamp-6 text-14" about="t3_1fx0a03" property="schema:articleBody" dir="auto"><p>
+      Throwaway for obvious reasons. I (28F) have always been the glue that held our family together. It&#x27;s important to note that my sister (31F) and I have navigated a complex tapestry of emotions over the years.
+    </p><p>
+      In a world where trust is everything, her actions shattered the very foundation of our bond. Little did I know that this moment would change everything. Ultimately, I had to prioritize my own mental well-being. So, Reddit, AITA?
+    </p></div>
+      </div></a>
+    </shreddit-post-text-body>
+    <div class="actions"><span>18400 ⇧⇩</span> <span>2900 💬</span> <span>Share</span></div>
+  </shreddit-post>
+  <hr class="border-0 border-b-sm border-solid border-b-neutral-border-weak">
+  <shreddit-post class="block relative cursor-pointer group bg-neutral-background xs:rounded-4 px-md py-2xs my-2xs" permalink="/r/memes/comments/1fx0a04/post/" content-href="https://i.redd.it/x" view-context="AggregateFeed" comment-count="61" view-type="cardView" feedindex="3" created-timestamp="2026-09-22T13:01:55.381000+0000" domain="i.redd.it" id="t3_1fx0a04" post-title="me when the monday hits" post-language="en" post-type="image" score="8800" upvote-ratio="0.97" subreddit-id="t5_fx3" author-id="t2_fx3" author="dankest_monday" subreddit-prefixed-name="r/memes" subreddit-name="memes" item-state="UNMODERATED">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/memes/comments/1fx0a04/post/"><faceplate-screen-reader-content>me when the monday hits</faceplate-screen-reader-content></a>
+    <span slot="credit-bar" class="flex text-12"><span class="flex gap-2xs items-center">
+      <a href="/r/memes/" class="font-bold">r/memes</a> <span aria-hidden="true">•</span>
+      <faceplate-timeago ts="2026-09-22T13:01:55.381000+0000"><time datetime="2026-09-22T13:01:55.381Z">5 hr. ago</time></faceplate-timeago> 
+    </span><span class="flex items-center"><shreddit-post-overflow-menu post-id="t3_1fx0a04"><button aria-label="Open user actions">…</button></shreddit-post-overflow-menu></span></span>
+    <a href="/r/memes/comments/1fx0a04/post/" id="post-title-t3_1fx0a04" slot="title" class="block font-semibold text-18">
+      me when the monday hits
+    </a>
+    <div slot="post-media-container" class="media"><div class="thumb">[image]</div></div>
+    <div class="actions"><span>8800 ⇧⇩</span> <span>61 💬</span> <span>Share</span></div>
+  </shreddit-post>
+  <hr class="border-0 border-b-sm border-solid border-b-neutral-border-weak">
+  <shreddit-ad-post class="block relative cursor-pointer group bg-neutral-background xs:rounded-4 px-md py-2xs my-2xs" permalink="/user/FocusFlowApp/comments/1fx0a05/ad/" content-href="https://focusflow.example/x" view-context="AggregateFeed" comment-count="0" view-type="cardView" feedindex="4" created-timestamp="2026-09-22T13:01:55.381000+0000" domain="focusflow.example" id="t3_1fx0a05" post-title="Stop doomscrolling. FocusFlow blocks distracting apps so you can get your life back. Try it free for 30 days." post-language="en" post-type="video" subreddit-id="t5_fx4" author-id="t2_fx4" author="FocusFlowApp" subreddit-name="u_FocusFlowApp" item-state="UNMODERATED" post-id="t3_1fx0a05" ad-type="video" promoted="" call-to-action="Learn More" placement="feed" outbound-link-url="https://focusflow.example/?utm_source=reddit">
+    <a slot="full-post-link" class="absolute inset-0" href="/user/FocusFlowApp/comments/1fx0a05/ad/"><faceplate-screen-reader-content>Stop doomscrolling. FocusFlow blocks distracting apps so you can get your life back. Try it free for 30 days.</faceplate-screen-reader-content></a>
+    <span slot="credit-bar" class="flex text-12"><span class="flex gap-2xs items-center">
+      <a href="/r/u_FocusFlowApp/" class="font-bold">u/FocusFlowApp</a> <span aria-hidden="true">•</span>
+      <faceplate-timeago ts="2026-09-22T13:01:55.381000+0000"><time datetime="2026-09-22T13:01:55.381Z">5 hr. ago</time></faceplate-timeago> <span aria-hidden="true">•</span> <span class="text-12">Promoted</span>
+    </span><span class="flex items-center"><shreddit-post-overflow-menu post-id="t3_1fx0a05"><button aria-label="Open user actions">…</button></shreddit-post-overflow-menu></span></span>
+    <a href="/user/FocusFlowApp/comments/1fx0a05/ad/" id="post-title-t3_1fx0a05" slot="title" class="block font-semibold text-18">
+      Stop doomscrolling. FocusFlow blocks distracting apps so you can get your life back. Try it free for 30 days.
+    </a>
+    <div slot="post-media-container" class="media"><div class="thumb">[video]</div></div>
+    <div class="actions"><span> ⇧⇩</span> <span>0 💬</span> <span>Share</span></div>
+  </shreddit-ad-post>
+  <hr class="border-0 border-b-sm border-solid border-b-neutral-border-weak">
+  <shreddit-post class="block relative cursor-pointer group bg-neutral-background xs:rounded-4 px-md py-2xs my-2xs" permalink="/r/technology/comments/1fx0a06/post/" content-href="https://reuters.example/x" view-context="AggregateFeed" comment-count="1210" view-type="cardView" feedindex="5" created-timestamp="2026-09-22T13:01:55.381000+0000" domain="reuters.example" id="t3_1fx0a06" post-title="EU fines major cloud provider €1.2 billion over data transfer violations" post-language="en" post-type="link" score="15400" upvote-ratio="0.97" subreddit-id="t5_fx5" author-id="t2_fx5" author="newsbot_hal" subreddit-prefixed-name="r/technology" subreddit-name="technology" item-state="UNMODERATED">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/technology/comments/1fx0a06/post/"><faceplate-screen-reader-content>EU fines major cloud provider €1.2 billion over data transfer violations</faceplate-screen-reader-content></a>
+    <span slot="credit-bar" class="flex text-12"><span class="flex gap-2xs items-center">
+      <a href="/r/technology/" class="font-bold">r/technology</a> <span aria-hidden="true">•</span>
+      <faceplate-timeago ts="2026-09-22T13:01:55.381000+0000"><time datetime="2026-09-22T13:01:55.381Z">5 hr. ago</time></faceplate-timeago> 
+    </span><span class="flex items-center"><shreddit-post-overflow-menu post-id="t3_1fx0a06"><button aria-label="Open user actions">…</button></shreddit-post-overflow-menu></span></span>
+    <a href="/r/technology/comments/1fx0a06/post/" id="post-title-t3_1fx0a06" slot="title" class="block font-semibold text-18">
+      EU fines major cloud provider €1.2 billion over data transfer violations
+    </a>
+    <shreddit-post-flair slot="post-flair" post-id="t3_1fx0a06"><a href="/r/technology/?f=flair_name%3A%22Privacy%22" class="no-decoration"><span class="bg-tone-4 inline-block truncate text-12 px-[6px] rounded-5"><div aria-label="Flair: Privacy" class="flair-content">
+      Privacy
+    </div></span></a></shreddit-post-flair>
+    <a slot="post-media-container" class="linkcard" href="https://reuters.example/story">reuters.example ↗</a>
+    <div class="actions"><span>15400 ⇧⇩</span> <span>1210 💬</span> <span>Share</span></div>
+  </shreddit-post>
+  <hr class="border-0 border-b-sm border-solid border-b-neutral-border-weak">
+  <shreddit-post class="block relative cursor-pointer group bg-neutral-background xs:rounded-4 px-md py-2xs my-2xs" permalink="/r/personalfinance/comments/1fx0a07/post/" content-href="https://self.personalfinance/x" view-context="AggregateFeed" comment-count="320" view-type="cardView" feedindex="6" created-timestamp="2026-09-22T13:01:55.381000+0000" domain="self.personalfinance" id="t3_1fx0a07" post-title="PSA: How to do a backdoor Roth IRA step by step (with the pro-rata trap explained)" post-language="en" post-type="text" score="4100" upvote-ratio="0.97" subreddit-id="t5_fx6" author-id="t2_fx6" author="roth_or_bust" subreddit-prefixed-name="r/personalfinance" subreddit-name="personalfinance" item-state="UNMODERATED">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/personalfinance/comments/1fx0a07/post/"><faceplate-screen-reader-content>PSA: How to do a backdoor Roth IRA step by step (with the pro-rata trap explained)</faceplate-screen-reader-content></a>
+    <span slot="credit-bar" class="flex text-12"><span class="flex gap-2xs items-center">
+      <a href="/r/personalfinance/" class="font-bold">r/personalfinance</a> <span aria-hidden="true">•</span>
+      <faceplate-timeago ts="2026-09-22T13:01:55.381000+0000"><time datetime="2026-09-22T13:01:55.381Z">5 hr. ago</time></faceplate-timeago> 
+    </span><span class="flex items-center"><shreddit-post-overflow-menu post-id="t3_1fx0a07"><button aria-label="Open user actions">…</button></shreddit-post-overflow-menu></span></span>
+    <a href="/r/personalfinance/comments/1fx0a07/post/" id="post-title-t3_1fx0a07" slot="title" class="block font-semibold text-18">
+      PSA: How to do a backdoor Roth IRA step by step (with the pro-rata trap explained)
+    </a>
+    <shreddit-post-flair slot="post-flair" post-id="t3_1fx0a07"><a href="/r/personalfinance/?f=flair_name%3A%22Retirement%22" class="no-decoration"><span class="bg-tone-4 inline-block truncate text-12 px-[6px] rounded-5"><div aria-label="Flair: Retirement" class="flair-content">
+      Retirement
+    </div></span></a></shreddit-post-flair>
+    <shreddit-post-text-body slot="text-body" post-id="t3_1fx0a07" view-context="AggregateFeed" subreddit-prefixed-name="r/personalfinance">
+      <a href="/r/personalfinance/comments/1fx0a07/post/" class="no-underline" slot="text-body"><div class="overflow-hidden" data-post-click-location="text-body">
+        <div id="t3_1fx0a07-post-rtjson-content" class="md feed-card-text-preview line-clamp-6 text-14" about="t3_1fx0a07" property="schema:articleBody" dir="auto"><p>
+      1. Make a non-deductible contribution to a traditional IRA. 2. Wait for it to settle, then convert to Roth. 3. File form 8606.
+    </p><p>
+      The trap: if you have ANY pre-tax money in a traditional, SEP or SIMPLE IRA on Dec 31, the conversion is taxed pro-rata. Roll pre-tax IRA money into your 401(k) first if your plan allows. Example: $7k after-tax + $63k pre-tax means 90% of your conversion is taxable.
+    </p></div>
+      </div></a>
+    </shreddit-post-text-body>
+    <div class="actions"><span>4100 ⇧⇩</span> <span>320 💬</span> <span>Share</span></div>
+  </shreddit-post>
+  <hr class="border-0 border-b-sm border-solid border-b-neutral-border-weak">
+  <shreddit-post class="block relative cursor-pointer group bg-neutral-background xs:rounded-4 px-md py-2xs my-2xs" permalink="/r/AskHistorians/comments/1fx0a08/post/" content-href="https://self.AskHistorians/x" view-context="AggregateFeed" comment-count="140" view-type="cardView" feedindex="7" created-timestamp="2026-09-22T13:01:55.381000+0000" domain="self.AskHistorians" id="t3_1fx0a08" post-title="How did medieval peasants actually keep track of the date without calendars?" post-language="en" post-type="text" score="2200" upvote-ratio="0.97" subreddit-id="t5_fx7" author-id="t2_fx7" author="curious_about_1300" subreddit-prefixed-name="r/AskHistorians" subreddit-name="AskHistorians" item-state="UNMODERATED">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/AskHistorians/comments/1fx0a08/post/"><faceplate-screen-reader-content>How did medieval peasants actually keep track of the date without calendars?</faceplate-screen-reader-content></a>
+    <span slot="credit-bar" class="flex text-12"><span class="flex gap-2xs items-center">
+      <a href="/r/AskHistorians/" class="font-bold">r/AskHistorians</a> <span aria-hidden="true">•</span>
+      <faceplate-timeago ts="2026-09-22T13:01:55.381000+0000"><time datetime="2026-09-22T13:01:55.381Z">5 hr. ago</time></faceplate-timeago> 
+    </span><span class="flex items-center"><shreddit-post-overflow-menu post-id="t3_1fx0a08"><button aria-label="Open user actions">…</button></shreddit-post-overflow-menu></span></span>
+    <a href="/r/AskHistorians/comments/1fx0a08/post/" id="post-title-t3_1fx0a08" slot="title" class="block font-semibold text-18">
+      How did medieval peasants actually keep track of the date without calendars?
+    </a>
+    <shreddit-post-text-body slot="text-body" post-id="t3_1fx0a08" view-context="AggregateFeed" subreddit-prefixed-name="r/AskHistorians">
+      <a href="/r/AskHistorians/comments/1fx0a08/post/" class="no-underline" slot="text-body"><div class="overflow-hidden" data-post-click-location="text-body">
+        <div id="t3_1fx0a08-post-rtjson-content" class="md feed-card-text-preview line-clamp-6 text-14" about="t3_1fx0a08" property="schema:articleBody" dir="auto"><p>
+      I&#x27;ve read that most people couldn&#x27;t read, but they still knew when feast days were. Did the church bells do this, or was there some other system? Especially curious about rural England around 1300.
+    </p></div>
+      </div></a>
+    </shreddit-post-text-body>
+    <div class="actions"><span>2200 ⇧⇩</span> <span>140 💬</span> <span>Share</span></div>
+  </shreddit-post>
+  <hr class="border-0 border-b-sm border-solid border-b-neutral-border-weak">
+  <shreddit-post class="block relative cursor-pointer group bg-neutral-background xs:rounded-4 px-md py-2xs my-2xs" permalink="/r/movies/comments/1fx0a09/post/" content-href="https://self.movies/x" view-context="AggregateFeed" comment-count="410" view-type="cardView" feedindex="8" created-timestamp="2026-09-22T13:01:55.381000+0000" domain="self.movies" id="t3_1fx0a09" post-title="Starfall Protocol&#x27;s ending completely recontextualizes the first act" post-language="en" post-type="text" score="950" upvote-ratio="0.97" subreddit-id="t5_fx8" author-id="t2_fx8" author="reel_talk_rita" subreddit-prefixed-name="r/movies" subreddit-name="movies" item-state="UNMODERATED" spoiler="">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/movies/comments/1fx0a09/post/"><faceplate-screen-reader-content>Starfall Protocol&#x27;s ending completely recontextualizes the first act</faceplate-screen-reader-content></a>
+    <span slot="credit-bar" class="flex text-12"><span class="flex gap-2xs items-center">
+      <a href="/r/movies/" class="font-bold">r/movies</a> <span aria-hidden="true">•</span>
+      <faceplate-timeago ts="2026-09-22T13:01:55.381000+0000"><time datetime="2026-09-22T13:01:55.381Z">5 hr. ago</time></faceplate-timeago> 
+    </span><span class="flex items-center"><shreddit-post-overflow-menu post-id="t3_1fx0a09"><button aria-label="Open user actions">…</button></shreddit-post-overflow-menu></span></span>
+    <a href="/r/movies/comments/1fx0a09/post/" id="post-title-t3_1fx0a09" slot="title" class="block font-semibold text-18">
+      Starfall Protocol&#x27;s ending completely recontextualizes the first act
+    </a>
+    <shreddit-post-flair slot="post-flair" post-id="t3_1fx0a09"><a href="/r/movies/?f=flair_name%3A%22Discussion%22" class="no-decoration"><span class="bg-tone-4 inline-block truncate text-12 px-[6px] rounded-5"><div aria-label="Flair: Discussion" class="flair-content">
+      Discussion
+    </div></span></a></shreddit-post-flair>
+    <shreddit-post-text-body slot="text-body" post-id="t3_1fx0a09" view-context="AggregateFeed" subreddit-prefixed-name="r/movies">
+      <a href="/r/movies/comments/1fx0a09/post/" class="no-underline" slot="text-body"><div class="overflow-hidden" data-post-click-location="text-body">
+        <div id="t3_1fx0a09-post-rtjson-content" class="md feed-card-text-preview line-clamp-6 text-14" about="t3_1fx0a09" property="schema:articleBody" dir="auto"><p>
+      Once you know the captain was the signal all along, the opening dinner scene plays completely differently. Every line she says is a warning. Did anyone else catch the clock in the background?
+    </p></div>
+      </div></a>
+    </shreddit-post-text-body>
+    <div class="actions"><span>950 ⇧⇩</span> <span>410 💬</span> <span>Share</span></div>
+  </shreddit-post>
+  <hr class="border-0 border-b-sm border-solid border-b-neutral-border-weak">
+</shreddit-feed>
+</main>
+</body></html>

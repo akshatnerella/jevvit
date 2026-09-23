@@ -1,0 +1,11 @@
+{
+  "name": "jevvit-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node parse.test.mjs && node e2e.mjs",
+    "live-parse": "node live-parse.mjs",
+    "shots": "node shots.mjs"
+  },
+  "devDependencies": { "puppeteer": "^24.0.0" }
+}

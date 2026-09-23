@@ -1,0 +1,57 @@
+[data-jv-id] {
+  position: relative;
+}
+
+/* box */
+[data-jv-state="done"][data-jv-mode="box"],
+[data-jv-state="done"][data-jv-mode="dim"] {
+  outline: 3px solid var(--jv-color) !important;
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+[data-jv-state="done"][data-jv-low="1"]:not([data-jv-mode="off"]) {
+  outline-style: dashed !important;
+}
+[data-jv-state="pending"]:not([data-jv-mode="off"]) {
+  outline: 2px dashed rgba(128, 128, 128, 0.6) !important;
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* label */
+[data-jv-state="done"]:is([data-jv-mode="box"], [data-jv-mode="dim"])::after {
+  content: attr(data-jv-label);
+  position: absolute;
+  /* Straddles the top edge of the box so it doesn't cover the subreddit and author line. */
+  top: -11px;
+  left: 14px;
+  z-index: 50;
+  max-width: calc(100% - 12px);
+  background: var(--jv-color);
+  color: #fff;
+  font: 600 11px/18px -apple-system, system-ui, "Segoe UI", sans-serif;
+  letter-spacing: 0.02em;
+  padding: 0 7px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+[data-jv-state="done"][data-jv-tip]:is([data-jv-mode="box"], [data-jv-mode="dim"]):hover::after {
+  content: attr(data-jv-tip);
+  white-space: normal;
+}
+
+/* dim / hide */
+[data-jv-state="done"][data-jv-mode="dim"] {
+  opacity: 0.25;
+  transition: opacity 0.15s;
+}
+[data-jv-state="done"][data-jv-mode="dim"]:hover {
+  opacity: 1;
+}
+[data-jv-state="done"][data-jv-mode="hide"] {
+  display: none !important;
+}

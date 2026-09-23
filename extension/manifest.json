@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Jevvit: Cut the Slop from Reddit",
+  "short_name": "Jevvit",
+  "version": "1.0.0",
+  "description": "Color-codes every Reddit post as ragebait, karma farming, AI slop or your own categories, so you can skip the noise.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://jev-backend.vercel.app/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.reddit.com/*"
+      ],
+      "js": [
+        "settings.js",
+        "parse.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Jevvit",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "commands": {
+    "toggle-jevvit": {
+      "suggested_key": {
+        "default": "Alt+Shift+R"
+      },
+      "description": "Turn Jevvit on or off"
+    }
+  },
+  "homepage_url": "https://github.com/akshatnerella/jevvit"
+}
